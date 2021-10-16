@@ -14,4 +14,4 @@ import { initSelect2 as select2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
   select2();
-};
+});
