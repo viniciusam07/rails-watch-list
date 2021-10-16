@@ -11,7 +11,9 @@ require("channels")
 import 'bootstrap';
 
 import { initSelect2 as select2 } from '../components/init_select2';
+import { initUpdateNavbarOnScroll } from '../components/init_navbar';
 
 document.addEventListener('turbolinks:load', () => {
   select2();
+  initUpdateNavbarOnScroll();
 });

@@ -1,13 +1,14 @@
-<h1>My Lists <%= "(#{@lists.count})" %></h1>
 
-<ul>
-  <% @lists.each do |list|  %>
-    <li>
-      <%= link_to list.name, list_path(list) %>
-      <%= "Created at: #{list.created_at}" %>
-      <%= "Updated at: #{list.updated_at}" %>
-    </li>
-  <% end %>
-</ul>
+<div class="home-banner">
+  <h1>My Movie List <%= "(#{@lists.count})" %></h1>
+</div>
+
+  <div class = "card-deck">
+    <% @lists.each do |list| %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)) ">
+          <%= link_to list.name, list_path(list) %>
+        </div>
+    <% end %>
+  </div>
 
 <p><%= link_to 'Add a new list', new_list_path %></p>
