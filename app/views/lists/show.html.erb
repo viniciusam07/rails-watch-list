@@ -1,0 +1,12 @@
+<h2><%= @list.name %></h2>
+
+<h3><%= "(#{@bookmarks.count})" %>Movies added</h3>
+<ul class="list-group">
+  <% @list.bookmarks.each do |bookmark| %>
+    <li class="list-group-item">
+      <%= "Comment: #{bookmark.comment} |" %>
+      <%= "Movie: #{bookmark.movie.title}" %>
+      <%= "Added date: #{review.created_at}" %>
+    </li>
+  <% end %>
+</ul>
