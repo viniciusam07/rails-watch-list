@@ -1,12 +1,16 @@
 <h2><%= @list.name %></h2>
 
-<h3><%= "(#{@bookmarks.count})" %>Movies added</h3>
+<h3><%= "(#{@list.movies.count})" %>Movies added</h3>
 <ul class="list-group">
-  <% @list.bookmarks.each do |bookmark| %>
+  <% @list.movies.each do |movie| %>
     <li class="list-group-item">
-      <%= "Comment: #{bookmark.comment} |" %>
-      <%= "Movie: #{bookmark.movie.title}" %>
-      <%= "Added date: #{review.created_at}" %>
+      <%= "Title: #{movie.title}" %>
+      -
+      <%= "Rating: #{movie.rating}" %>
+      <p><%= link_to "Delete", bookmark_path(params[:id]), method: :delete, data: { confirm: "Are you sure?" } %>
+      </p>
     </li>
   <% end %>
 </ul>
+
+<p><%= link_to 'Add a new Bookmark', new_list_bookmark_path(@list), class: "btn btn-primary" %></p>
