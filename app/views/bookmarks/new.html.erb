@@ -5,3 +5,5 @@
   <%= f.association :movie, prompt: 'Select a movie', input_html: { class: 'select2' } %>
   <%= f.submit class: 'btn btn-primary'%>
 <% end %>
+
+<p><%= link_to "Back to #{@list.name} List", list_path(@list), class: "btn btn-primary" %></p>
