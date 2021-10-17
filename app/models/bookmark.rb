@@ -1,6 +1,7 @@
 class Bookmark < ApplicationRecord
   belongs_to :movie
   belongs_to :list
+  has_one_attached :poster
 
   validates :movie_id, presence: true
   validates :list_id, presence: true

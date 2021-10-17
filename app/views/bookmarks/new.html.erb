@@ -3,6 +3,7 @@
 <%= simple_form_for [@list, @bookmark] do |f| %>
   <%= f.input :comment, placeholder: 'Add a comment' %>
   <%= f.association :movie, prompt: 'Select a movie', input_html: { class: 'select2' } %>
+  <%= f.input :poster, as: :file %>
   <%= f.submit class: 'btn btn-primary'%>
 <% end %>
 
