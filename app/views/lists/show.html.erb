@@ -6,7 +6,11 @@
     <li class="list-group-item">
       <%= "Title: #{movie.title}" %>
       -
-      <%= "Rating: #{movie.rating}" %>
+      <div class="d-flex">
+        <% movie.rating.round.times do %>
+          <i class="far fa-star yellow"></i>
+        <% end %>
+      </div>
       <p>
         <%= link_to "Delete", bookmark_path(movie.bookmarks.find_by(list: @list)), method: :delete, data: { confirm: "Are you sure?" } %>
       </p>
