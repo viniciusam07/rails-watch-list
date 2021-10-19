@@ -9,7 +9,9 @@
 
   <% @list.movies.each do |movie| %>
     <div class="card-bookmark">
-      <img class="card-bookmark img" alt="Card image cap">
+      <% if @bookmark.poster.attached? %>
+        <img class="card-bookmark img" alt="Card image cap" <%= cl_image_path @bookmark.poster.key, height: 300, crop: :fill %>>
+      <% end %>
       <div class="card-bookmark-infos">
         <h2><%= movie.title %></h2>
         <div class="d-flex">
