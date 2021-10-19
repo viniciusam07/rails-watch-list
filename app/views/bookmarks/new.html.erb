@@ -1,12 +1,17 @@
 <div class="container">
-  <h2>Add a new movie to your <%= @list.name %> list</h2>
+  <div class="form">
+    <h1>Add a new movie to your <%= @list.name %> list</h1>
 
-  <%= simple_form_for [@list, @bookmark] do |f| %>
-    <%= f.input :comment, placeholder: 'Add a comment' %>
-    <%= f.association :movie, prompt: 'Select a movie', input_html: { class: 'select2' } %>
-    <%= f.input :poster, as: :file %>
-    <%= f.submit class: 'btn btn-primary'%>
-  <% end %>
+    <%= simple_form_for [@list, @bookmark] do |f| %>
+      <%= f.input :comment, placeholder: 'Add a comment' %>
+      <%= f.association :movie, prompt: 'Select a movie', input_html: { class: 'select2' } %>
+      <%= f.input :poster, as: :file %>
+      <%= f.submit class: 'btn btn-primary'%>
+    <% end %>
 
-  <p><%= link_to "Back to #{@list.name} List", list_path(@list), class: "btn btn-primary" %></p>
+    <div style= "margin-top: 18px">
+      <%= link_to "Back to List", list_path(@list), class: "btn btn-danger" %>
+    </div>
+
+  </div>
 </div>

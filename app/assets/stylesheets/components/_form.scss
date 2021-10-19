@@ -1,0 +1,33 @@
+.form {
+  background:#fff;
+  border-radius:6px;
+  padding:20px;
+  padding-top:30px;
+  width:300px;
+  margin:50px auto;
+  box-shadow:15px 15px 0px rgba(0,0,0,.1);
+
+  & h1 {
+  text-align:center;
+  font-size:1.4em;
+  font-weight:700;
+  color:#ccc;
+  margin-bottom:24px;
+  }
+
+  .btn {
+  position:relative;
+  width:100%;
+  padding:20px;
+  border-radius:6px;
+  border:0;
+  font-size:1.2em;
+  color:#fff;
+  text-shadow:1px 1px 0px rgba(0,0,0,.1);
+  }
+
+  .btn:active {
+  top:3px;
+  box-shadow:none;
+}
+}
