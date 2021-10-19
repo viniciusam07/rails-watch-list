@@ -7,21 +7,22 @@
 
 <div class="container">
 
-  <% @list.movies.each do |movie| %>
+  <% @list.bookmarks.each do |bookmark| %>
     <div class="card-bookmark">
-      <% if @bookmark.poster.attached? %>
-        <img class="card-bookmark img" alt="Card image cap" <%= cl_image_path @bookmark.poster.key, height: 300, crop: :fill %>>
+
+      <% if bookmark.poster.attached? %>
+        <%= image_tag cl_image_path bookmark.poster.key, height: 300, crop: :fill %>
       <% end %>
       <div class="card-bookmark-infos">
-        <h2><%= movie.title %></h2>
+        <h2><%= bookmark.movie.title %></h2>
         <div class="d-flex">
-          <% movie.rating.round.times do %>
+          <% bookmark.movie.rating.round.times do %>
             <i class="far fa-star yellow"></i>
           <% end %>
         </div>
-        <p> <%= "How to access comment from bookmark?"  %> </p>
+        <p> <%= bookmark.comment  %> </p>
         <p>
-          <%= link_to "Delete", bookmark_path(movie.bookmarks.find_by(list: @list)), method: :delete, data: { confirm: "Are you sure?" } %>
+          <%= link_to "Delete", bookmark_path(bookmark), method: :delete, data: { confirm: "Are you sure?" } %>
         </p>
       </div>
     </div>
