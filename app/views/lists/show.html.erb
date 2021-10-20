@@ -1,9 +1,19 @@
-  <div class="list-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @list.photo.key, height: 300, crop: :fill %>') ">
-    <div class="container">
-      <h1><%= @list.name %></h1>
-      <p><%= "#{@list.movies.count} movies added" %></p>
+  <% if @list.photo.attached?  %>
+    <div class="list-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @list.photo.key, height: 300, crop: :fill %>') ">
+      <div class="container">
+        <h1><%= @list.name %></h1>
+        <p><%= "#{@list.movies.count} movies added" %></p>
+      </div>
     </div>
-  </div>
+  <% else %>
+    <div class="list-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path 'emperor-penguins.jpg', height: 300, crop: :fill %>') ">
+      <div class="container">
+        <h1><%= @list.name %></h1>
+        <p><%= "#{@list.movies.count} movies added" %></p>
+      </div>
+    </div>
+  <% end %>
+
 
 <div class="container">
 
